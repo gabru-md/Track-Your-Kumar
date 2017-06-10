@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+
+    <meta charset="utf-8">
+    <title>TYK | Track your Kumar Online! </title>
+
+    <!--Importing Bootstrap and jQuery from googleAPIs and bootstrapCDN-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style media="screen">
+      div{
+        text-align:center;
+      }
+      th{
+        font-size:25px;
+        text-align: center;
+        padding:0px 20px 0px 20px;
+      }
+      td{
+        padding:5px 20px 5px 20px;
+      }
+      table{
+        margin:0 auto;
+      }
+      td{
+        font-weight:bold;
+      }
+    </style>
+    <script type="text/javascript">
+    function check(){
+    var a = document.getElementsByTagName('td');
+    console.log(a);
+    for (var i = 0 ; i < a.length ; i++){
+      if(a[i].innerText == "Yes"){
+          //alert('Koi Mil Gya!');
+          a[i].style.backgroundColor = '#1be215';
+      }
+    else if(a[i].innerText == "No"){
+          //alert('Koi Nai Mila!');
+          a[i].style.backgroundColor = 'RED';
+      }
+    }
+  }
+    </script>
+  </head>
+  <body onload="check()">
+    <div class="container">
+      <div class="rows">
+        <div class="col-sm-12">
+          <h1>Bank Online<br><h3>Track your Kumar</h3><br><a style="text-decoration:none;color:black" href="/track"><h5>Refresh</h5></a></h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="rows">
+          <div class="col-sm-12" id="table">
+            <br><br>
+            <table border="2" class="table-bordered">
+              <th>Counter/Room No</th><th>Name</th><th>Designation</th><th>Office</th><th>Room</th>
+                <% for(var i=0; i<list.length; i++) {%>
+                  <tr>
+                    <td><%= list[i]['counter'] %></td>
+                    <td><%= list[i]['name'] %></td>
+                    <td><%= list[i]['desg'] %></td>
+                    <td><%= list[i]['office'] %></td>
+                    <td><%= list[i]['room'] %></td>
+                  </tr>
+                <% } %>
+            </table>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
