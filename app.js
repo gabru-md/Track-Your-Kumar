@@ -106,6 +106,37 @@ app.post('/add',function(req,res){
 });
 
 app.post('/remove',function(req,res){
+  var emp_uid = req.body.emp_id;
+  var name;
+  var desg;
+  var counter;
+  MongoClient.connect(url,function(err,db){
+    if(err){
+      console.log(err);
+    }
+    else{
+      var status = db.collection('status');
+      status.find({'emp_id':emp_uid}).toArray(function(err,resp){
+        if(err){
+          console.log(err);
+        }
+        else if(resp.length){
+          var obj={
+            display : 'inline-block',
+            emp_id : resp[0]['emp_id'],
+            counter : resp[0]['counter'],
+            name : resp[0]['name'],
+            desg : resp[0]['desg']
+          }
+
+          res.render('removeKumar',obj);
+        }
+      });
+    }
+  });
+});
+
+app.post('/removeFinal',function(req,res){
   var emp_id = req.body.emp_id;
   MongoClient.connect(url,function(err,db){
     if(err){
@@ -128,9 +159,14 @@ app.post('/remove',function(req,res){
 });
 
 app.get('/removeKumar',function(req,res){
-  res.writeHead(200,{'Content-Type':'text/html'});
-  var myInput = fs.createReadStream(__dirname + '/removeKumar.html');
-  myInput.pipe(res);
+  var empty = {
+    display:'none',
+    emp_id:"",
+    counter:"",
+    name:"",
+    desg:""
+  }
+  res.render('removeKumar',empty);
 });
 
 app.listen('1000');
