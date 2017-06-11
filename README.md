@@ -13,9 +13,13 @@ Github Repository for HackIIITD
     >mongod
     // change the path to directory containing data.json
     // new terminal
-    >mongoimport --db track --collection status --file data.json
+    //mongoimport --db track --collection status --file data.json > NO NEED TO IMPORT NOW
     // finally from the root folder
     >node app.js
     
+    
+#### Updated
+    * Web interface for adding and removing records has been added.
+
 #### Finalle Open:
-    http://localhost:1000/track
+    http://localhost:1000/
