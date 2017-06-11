@@ -17,7 +17,7 @@ app.set('view engine','ejs');
 
 var url = 'mongodb://localhost:27017/track';
 
-app.use(favicon(path.join(__dirname, 'public','images','favicon.ico')));
+//app.use(favicon(path.join(__dirname, 'public','images','favicon.ico')));
 
 
 app.get('/',function(req,res){
@@ -60,6 +60,77 @@ app.get('/track',function(req,resp){
       });
     }
   });
+});
+
+app.get('/addKumar',function(req,res){
+  res.writeHead(200,{'Content-Type':'text/html'});
+  var myInput = fs.createReadStream(__dirname + '/addKumar.html');
+  myInput.pipe(res);
+});
+
+app.post('/add',function(req,res){
+  var emp_id = req.body.emp_id;
+  var counter = req.body.counter;
+  var name = req.body.name;
+  var desg = req.body.desg;
+  var office = "NAI";
+  var room = "NAI";
+  var obj = {
+    'emp_id':emp_id,
+    'counter':counter,
+    'name':name,
+    'desg':desg,
+    'office':office,
+    'room':room
+  }
+  //console.log(counter,name,desg,office,room);
+  MongoClient.connect(url,function(err,db){
+    if(err){
+      console.log(err);
+    }
+    else{
+      var status = db.collection('status');
+      status.insert(obj,function(err,resp){
+        if(err){
+          console.log(err);
+        }
+        else{
+          console.log(res.insertedCount);
+          res.writeHead(200,{'Content-Type':'text/html'});
+          var myInput = fs.createReadStream(__dirname + '/successRecord.html');
+          myInput.pipe(res);
+        }
+      });
+    }
+  });
+});
+
+app.post('/remove',function(req,res){
+  var emp_id = req.body.emp_id;
+  MongoClient.connect(url,function(err,db){
+    if(err){
+      console.log(err);
+    }
+    else{
+      var status = db.collection('status');
+      status.deleteOne({'emp_id':emp_id},function(err,result){
+        if(err){
+          console.log(err);
+        }
+        else{
+          res.writeHead(200,{'Content-Type':'text/html'});
+          var myInput = fs.createReadStream(__dirname + '/successDelete.html');
+          myInput.pipe(res);
+        }
+      });
+    }
+  });
+});
+
+app.get('/removeKumar',function(req,res){
+  res.writeHead(200,{'Content-Type':'text/html'});
+  var myInput = fs.createReadStream(__dirname + '/removeKumar.html');
+  myInput.pipe(res);
 });
 
 app.listen('1000');
