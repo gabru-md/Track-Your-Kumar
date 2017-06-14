@@ -8,13 +8,13 @@ Github Repository for HackIIITD
     >npm install mongodb
     >npm install body-parser
     >npm install serve-favicon
+    
+#### or simply type
+    >npm install
 
 #### First add the data.json file to the MongoDB Server
     >mongod
-    // change the path to directory containing data.json
-    // new terminal
-    //mongoimport --db track --collection status --file data.json > NO NEED TO IMPORT NOW
-    // finally from the root folder
+    // new Terminal window
     >node app.js
     
     
