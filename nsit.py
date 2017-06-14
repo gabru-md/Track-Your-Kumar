@@ -1,3 +1,6 @@
+#
+# Python 3.0+ required
+#
 import pymongo
 from pymongo import MongoClient
 
