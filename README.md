@@ -13,9 +13,9 @@ Our software. It exploits already existing attendance systems in offices to show
 
 ## Features
 
-Real-time - Data is updated at each and every sign-in and sign-out.
-Accurate - Data is taken from the company's own attendance database.
-Alerts - Set an alert for a specific person or position.
+Real-time - Data is updated at each and every sign-in and sign-out.<br>
+Accurate - Data is taken from the company's own attendance database.<br>
+        * Alerts - Set an alert for a specific person or position. // Will add, Maybe!
 
 <---------------------------------------------------------------------------------------------------------------------------------->
 
