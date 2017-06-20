@@ -28,6 +28,7 @@ app.get('/',function(req,res){
 
 var table="";
 var emptylist = {
+  notices:"",
   counter:"",
   name:"",
   desg:"",
@@ -73,6 +74,7 @@ app.post('/add',function(req,res){
   var counter = req.body.counter;
   var name = req.body.name;
   var desg = req.body.desg;
+  var notices = "";
   var office = "NAI";
   var room = "NAI";
   var obj = {
@@ -81,7 +83,8 @@ app.post('/add',function(req,res){
     'name':name,
     'desg':desg,
     'office':office,
-    'room':room
+    'room':room,
+    'notices':notices
   }
   //console.log(counter,name,desg,office,room);
   MongoClient.connect(url,function(err,db){
@@ -167,6 +170,46 @@ app.get('/removeKumar',function(req,res){
     desg:""
   }
   res.render('removeKumar',empty);
+});
+
+
+app.get('/addNotice',function(req,res){
+    res.writeHead(200,{'Content-Type':'text/html'});
+    var myInput = fs.createReadStream(__dirname + '/notice.html');
+    myInput.pipe(res);
+});
+
+app.post('/addNotice',function(req,res){
+  var emp_id = req.body.emp_id;
+  var notice = req.body.notice;
+  MongoClient.connect(url,function(err,db){
+    if(err){
+      console.log(err)
+    }
+    else{
+        var status = db.collection('status');
+        var query = {
+          'emp_id':emp_id
+        }
+        var update_obj = {
+          $set:{
+            'notices': notice
+          }
+        }
+        status.update(query,update_obj,function(err,resp){
+          if(err){
+            var myInput = fs.createReadStream(__dirname + '/errorNotice.html')
+            res.writeHead(200,{'Content-Type':'text/html'});
+            myInput.pipe(res);
+          }
+          else{
+            var myInput = fs.createReadStream(__dirname + '/successNotice.html')
+            res.writeHead(200,{'Content-Type':'text/html'});
+            myInput.pipe(res);
+          }
+        });
+    }
+  });
 });
 
 app.listen('1000');
