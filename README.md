@@ -1,5 +1,5 @@
 # HackIIITD
-Github Repository for HackIIITD
+Github Repository for 'Track Your Kumar'
 
 <----------------------------------------------------------------------------------------------------------------------------------->
 
