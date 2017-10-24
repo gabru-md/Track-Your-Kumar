@@ -4,7 +4,7 @@
 
 Github Repository for 'Track Your Kumar'
 
-<----------------------------------------------------------------------------------------------------------------------------------->
+-----------------------------------------------------------------------------------------------------------------------------------
 
 ## The Problem
 
@@ -18,29 +18,35 @@ Our software. It exploits already existing attendance systems in offices to show
 
 Real-time - Data is updated at each and every sign-in and sign-out.<br>
 Accurate - Data is taken from the company's own attendance database.<br>
-        * Alerts - Set an alert for a specific person or position. // Will add, Maybe!
 
-<---------------------------------------------------------------------------------------------------------------------------------->
+## Future
 
-## FOR THE TIME BEING
+Alerts - Set an alert for a specific person or position. // Will add, Maybe!
+
+-----------------------------------------------------------------------------------------------------------------------------
+## How to Install
 #### Make sure you have NodeJS and NPM installed
 #### install the dependencies
-    >npm install express
-    >npm install mongodb
-    >npm install body-parser
-    >npm install serve-favicon
+```Shell
+    npm install express
+    npm install mongodb
+    npm install body-parser
+    npm install serve-favicon
+```
     
 #### or simply type
-    >npm install
-
+```Shell
+    npm install
+```
 #### First add the data.json file to the MongoDB Server
-    >mongod
+```Shell
+    mongod
     // new Terminal window
-    >node app.js
-    
+    node app.js
+```
     
 #### Updated
-    * Web interface for adding and removing records has been added.
+    Web interface for adding and removing records has been added.
 
 #### Finally Open:
     http://localhost:1000/
