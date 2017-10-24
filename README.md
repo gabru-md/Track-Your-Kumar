@@ -5,7 +5,7 @@
 Github Repository for 'Track Your Kumar'
 <br>
 -----------------------------------------------------------------------------------------------------------------------------------
-<br>
+
 ## The Problem
 
 Millions of man-hours are wasted every year by people waiting for an authority to sign off on their paperwork. You go to the concerned signatory's office with the most urgent paperwork only to find out that he has not come in because he has the flu. The frustration itself is enough to make one mad.
@@ -22,7 +22,7 @@ Accurate - Data is taken from the company's own attendance database.<br>
 ## Future
 
 Alerts - Set an alert for a specific person or position. // Will add, Maybe!
-<br>
+
 ----------------------------------------------------------------------------------------------------------------------------------
 <br>
 ## How to Install
