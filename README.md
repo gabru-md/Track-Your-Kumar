@@ -25,7 +25,7 @@ Alerts - Set an alert for a specific person or position. // Will add, Maybe!
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
-## FOR THE TIME BEING
+## How to Install
 #### Make sure you have NodeJS and NPM installed
 #### install the dependencies
 ```Shell
