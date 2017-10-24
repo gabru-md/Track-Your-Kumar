@@ -4,7 +4,8 @@
 
 Github Repository for 'Track Your Kumar'
 
-<----------------------------------------------------------------------------------------------------------------------------------->
+<hr>
+
 
 ## The Problem
 
@@ -20,7 +21,7 @@ Real-time - Data is updated at each and every sign-in and sign-out.<br>
 Accurate - Data is taken from the company's own attendance database.<br>
         * Alerts - Set an alert for a specific person or position. // Will add, Maybe!
 
-<---------------------------------------------------------------------------------------------------------------------------------->
+<hr>
 
 ## FOR THE TIME BEING
 #### Make sure you have NodeJS and NPM installed
