@@ -3,7 +3,7 @@
 *I hope that some govt. agency finds it someday and makes a software out of it.
 
 Github Repository for 'Track Your Kumar'
-<br>
+
 -----------------------------------------------------------------------------------------------------------------------------------
 
 ## The Problem
@@ -23,8 +23,7 @@ Accurate - Data is taken from the company's own attendance database.<br>
 
 Alerts - Set an alert for a specific person or position. // Will add, Maybe!
 
-----------------------------------------------------------------------------------------------------------------------------------
-<br>
+-----------------------------------------------------------------------------------------------------------------------------
 ## How to Install
 #### Make sure you have NodeJS and NPM installed
 #### install the dependencies
