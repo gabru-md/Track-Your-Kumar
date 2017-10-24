@@ -4,7 +4,8 @@
 
 Github Repository for 'Track Your Kumar'
 
-<div style="border-bottom: 3px dashed #ccc"></div>
+<<hr>>
+
 
 ## The Problem
 
